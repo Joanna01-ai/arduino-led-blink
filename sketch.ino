@@ -37,12 +37,13 @@ void loop() {
 // 100ms            → 0.1 second (10x faster blink)
 
 ---
-  
+// ================================  
 // Arduino LED Blink Project
 // Author: Joanna
 // Date: 07/05/2026
 // Simulator: Wokwi (wokwi.com)
-
+// ================================
+  
 // ----- Components -----
 // - Arduino Uno
 // - 1x Red LED
