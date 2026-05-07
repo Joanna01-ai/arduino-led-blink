@@ -144,4 +144,4 @@ void loop() {
 ```
 ---
 
-*Built by a complete beginner 🙌 | Started 06/05/2026*
+*Built by a complete beginner ✨ | Started 06/05/2026*
