@@ -128,18 +128,6 @@ void loop() {
 - [ ] Make the LED fade in and out
 - [ ] Build a traffic light with multiple LEDs
 
-```
- void setup() {
-  pinMode(13, OUTPUT);  // Set pin 13 as output
-}
-
-void loop() {
-  digitalWrite(13, HIGH);  // Turn LED ON
-  delay(100);              // it was 1000 before but i changed it to 100 for it to blink very fast
-  digitalWrite(13, LOW);   // Turn LED OFF
-  delay(100);              // same as the other one
-}
-```
 ---
 
 *Built by a complete beginner ✨ | Started 06/05/2026*
