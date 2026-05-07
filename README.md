@@ -126,4 +126,22 @@ void loop() {
 
 ---
 
+## log3 — [07/05/2026]
+➡️ Changed delay from 1000 to 100 — LED now blinks 
+10x faster! Confirmed it works in Wokwi simulator.
+
+```
+ void setup() {
+  pinMode(13, OUTPUT);  // Set pin 13 as output
+}
+
+void loop() {
+  digitalWrite(13, HIGH);  // Turn LED ON
+  delay(100);              // it was 1000 before but i changed it to 100 for it to blink very fast
+  digitalWrite(13, LOW);   // Turn LED OFF
+  delay(100);              // same as the other one
+}
+```
+---
+
 *Built by a complete beginner 🙌 | Started 06/05/2026*
