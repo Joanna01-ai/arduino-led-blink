@@ -296,6 +296,140 @@ So if button is NOT pressed → turn LED OFF
     - *"If no → turn LED off"*
     - *"Repeat forever"*
 
+## 🌟 LED Fade (PWM)
+
+### New components:
+No new components — just moved LED from Pin 13 to Pin 9!
+
+### New concepts learned:
+- **PWM** — controls brightness instead of just ON/OFF
+- **for loop** — repeats something a set number of times
+- **analogWrite()** — sets brightness level 0 to 255
+- **i++** — adds 1 to counter each step
+- **i--** — subtracts 1 from counter each step
+
+### Wiring change:
+LED moved from Pin 13 → Pin 9 (PWM pin marked with ~)
+
 ---
 
-*Built by a complete beginner ✨ | Started 06/05/2026*
+## 📓 Logs
+
+### log5 — [12/05/2026]
+➡️ Starting LED fade project. Circuit got deleted 
+so had to rewire 3 times but got it working! 
+Waiting for Wokwi servers to confirm simulation.
+
+## CODE:
+
+```cpp
+void setup() {
+pinMode(9, OUTPUT);  // LED on pin 9 (PWM pin)
+}
+```
+
+```cpp
+void loop() {
+// Fade IN
+for (int i = 0; i <= 255; i++) {
+analogWrite(9, i);  // brightness goes 0 → 255
+delay(10);
+}
+```
+
+```cpp
+// Fade OUT
+for (int i = 255; i >= 0; i--) {
+analogWrite(9, i);  // brightness goes 255 → 0
+delay(10);
+}
+}
+```
+
+## CODE EXPLANATION:
+
+### `void setup()` section:
+
+cpp
+
+`pinMode(9, OUTPUT);  // LED on pin 9 (PWM pin)`
+
+Same as before — tells Arduino **Pin 9 sends electricity out** to the LED. We changed from 13 to 9 because Pin 9 supports PWM!
+
+---
+
+### `void loop()` section:
+
+cpp
+
+`for (int i = 0; i <= 255; i++) {`
+
+This is called a **for loop** — a brand new concept! It means:
+
+- **`int i = 0`** — create a box called `i` and start it at 0
+- **`i <= 255`** — keep going as long as `i` is less than or equal to 255
+- **`i++`** — after each step, add 1 to `i`
+
+So it counts **0, 1, 2, 3, 4 ... all the way to 255** automatically!
+
+---
+
+cpp
+
+`analogWrite(9, i);  // brightness goes 0 → 255`
+
+- **`analogWrite`** — instead of just ON or OFF, this sets a **brightness level**
+- **`9`** — which pin to control
+- **`i`** — the brightness level (remember i is counting 0 → 255)
+
+So as `i` gets bigger, the LED gets brighter!
+
+---
+
+cpp
+
+`delay(10);`
+
+Wait 10 milliseconds between each brightness step — this makes the fade smooth and visible. If you removed this it would change too fast to see!
+
+---
+
+cpp
+
+`// Fade OUT
+for (int i = 255; i >= 0; i--) {
+    analogWrite(9, i);
+    delay(10);
+}`
+
+Same thing but **backwards!**
+
+- **`int i = 255`** — start at 255 (full brightness)
+- **`i >= 0`** — keep going as long as i is greater than or equal to 0
+- **`i--`** — subtract 1 from i each step (opposite of i++)
+
+So it counts **255, 254, 253 ... all the way to 0** making the LED get dimmer!
+
+---
+
+### 🧠 Simple Way to Remember It
+
+| Code | Think of it as... |
+| --- | --- |
+| `for loop` | Do something a set number of times automatically |
+| `int i` | A counter box that changes each loop |
+| `i++` | Add 1 to the counter |
+| `i--` | Subtract 1 from the counter |
+| `analogWrite` | Dimmer switch (0 = off, 255 = full brightness) |
+| `delay(10)` | Small pause so you can see the fade |
+
+---
+
+### 🔄 The whole flow in plain English:
+
+1. Count from **0 to 255**, each step make LED a tiny bit brighter → **fade IN**
+2. Count from **255 to 0**, each step make LED a tiny bit dimmer → **fade OUT**
+3. Repeat forever → **breathing effect!** 🌟
+---
+
+*Built by Joanna ✨ | Started 06/05/2026*
